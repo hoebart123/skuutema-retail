@@ -1,0 +1,8 @@
+flowchart LR
+    Mobile[Mobiele scanner-app - gepland] --> API[Laravel HTTP API]
+    Web[Webdashboard - gepland] --> API
+    API --> Services[Controllers / services / policies]
+    Services --> DB[(MySQL: 7 domeintabellen)]
+    Scheduler[Laravel scheduler - gepland] --> Jobs[Orderverzend-job - gepland]
+    Jobs --> Distributor[Distributeur API - onbekend]
+    Services --> Jobs
